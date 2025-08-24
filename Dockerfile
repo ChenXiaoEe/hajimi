@@ -1,26 +1,17 @@
-FROM registry-1.docker.io/library/python:3.11-slim
+# 使用官方 Python 镜像作为基础镜像
+FROM python:3.11-slim
 
 # 设置工作目录
 WORKDIR /app
 
-# 设置环境变量
-ENV PYTHONPATH=/app
-ENV PYTHONUNBUFFERED=1
-
-# 安装系统依赖
-RUN apt-get update && apt-get install -y \
-    curl \
-    && rm -rf /var/lib/apt/lists/*
+# 复制项目文件到工作目录
 COPY . .
 
-# 先复制依赖文件
-COPY pyproject.toml uv.lock ./
-
-# 安装uv包管理器
+# 安装 uv
 RUN pip install uv
 
-# 使用uv安装Python依赖
+# 使用 uv 安装依赖
 RUN uv pip install --system --no-cache -r pyproject.toml
 
-# 启动命令
-CMD ["python", "app/hajimi_king.py"]
+# 运行应用
+CMD ["python", "-m", "app.hajimi_king"]

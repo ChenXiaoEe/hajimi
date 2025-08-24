@@ -1,0 +1,37 @@
+# GitHub搜索查询配置文件
+# 每行一个查询语句，支持GitHub搜索语法
+# 以#开头的行为注释，空行会被忽略
+
+# 按时间范围细化查询，避免GitHub API 1000条结果的限制
+AIzaSy in:file pushed:2023-01-01..2023-01-31
+AIzaSy in:file pushed:2023-02-01..2023-02-28
+AIzaSy in:file pushed:2023-03-01..2023-03-31
+AIzaSy in:file pushed:2023-04-01..2023-04-30
+AIzaSy in:file pushed:2023-05-01..2023-05-31
+AIzaSy in:file pushed:2023-06-01..2023-06-30
+AIzaSy in:file pushed:2023-07-01..2023-07-31
+AIzaSy in:file pushed:2023-08-01..2023-08-31
+AIzaSy in:file pushed:2023-09-01..2023-09-30
+AIzaSy in:file pushed:2023-10-01..2023-10-31
+AIzaSy in:file pushed:2023-11-01..2023-11-30
+AIzaSy in:file pushed:2023-12-01..2023-12-31
+AIzaSy in:file pushed:2024-01-01..2024-01-31
+AIzaSy in:file pushed:2024-02-01..2024-02-29
+AIzaSy in:file pushed:2024-03-01..2024-03-31
+AIzaSy in:file pushed:2024-04-01..2024-04-30
+AIzaSy in:file pushed:2024-05-01..2024-05-31
+AIzaSy in:file pushed:2024-06-01..2024-06-30
+AIzaSy in:file pushed:2024-07-01..2024-07-31
+AIzaSy in:file pushed:2024-08-01..2024-08-31
+AIzaSy in:file pushed:2024-09-01..2024-09-30
+AIzaSy in:file pushed:2024-10-01..2024-10-31
+AIzaSy in:file pushed:2024-11-01..2024-11-30
+AIzaSy in:file pushed:2024-12-01..2024-12-31
+AIzaSy in:file pushed:2025-01-01..2025-01-31
+AIzaSy in:file pushed:2025-02-01..2025-02-28
+AIzaSy in:file pushed:2025-03-01..2025-03-31
+AIzaSy in:file pushed:2025-04-01..2025-04-30
+AIzaSy in:file pushed:2025-05-01..2025-05-31
+AIzaSy in:file pushed:2025-06-01..2025-06-30
+AIzaSy in:file pushed:2025-07-01..2025-07-31
+AIzaSy in:file pushed:2025-08-01..2025-08-31

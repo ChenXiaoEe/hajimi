@@ -2,6 +2,10 @@ import os
 import random
 import re
 import sys
+# 添加项目根目录到Python路径
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+
 import time
 import traceback
 from datetime import datetime, timedelta
@@ -11,8 +15,6 @@ import google.generativeai as genai
 from google.api_core import exceptions as google_exceptions
 
 from common.Logger import logger
-
-sys.path.append('../')
 from common.config import Config
 from utils.github_client import GitHubClient
 from utils.file_manager import file_manager, Checkpoint, checkpoint
@@ -29,6 +31,8 @@ skip_stats = {
     "doc_filter": 0
 }
 
+
+processed_keys = set()
 
 def normalize_query(query: str) -> str:
     query = " ".join(query.split())
@@ -172,7 +176,13 @@ def process_item(item: Dict[str, Any]) -> tuple:
 
     # 验证每个密钥
     for key in keys:
+        if key in processed_keys:
+            logger.info(f"⏭️ Skipping already processed key: {key}")
+            continue
+
         validation_result = validate_gemini_key(key)
+        processed_keys.add(key) # 记录已处理的密钥
+
         if validation_result and "ok" in validation_result:
             valid_keys.append(key)
             logger.info(f"✅ VALID: {key}")

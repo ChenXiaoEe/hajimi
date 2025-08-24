@@ -1,5 +1,6 @@
 services:
   hajimi-king:
+    image: chenxiaoee/hajimi-king
     build: .
     env_file:
       - .env
